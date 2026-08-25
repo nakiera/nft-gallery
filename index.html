@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>nakiera Art Portfolio & NFT Collections</title>
-  <meta name="description" content="Original fine art collection by nakiera." />
+  <title>nakiera Art Portfolio & NFT Gallery</title>
+  <meta name="description" content="Original paintings and charcoal drawings by nakiera." />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -121,7 +121,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
       gap: 28px;
-      margin-bottom: 48px;
+      margin-bottom: 56px;
     }
 
     .collection-card {
@@ -141,10 +141,9 @@
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
     }
 
-    /* Görsel Çerçevesi */
     .card-img-wrap {
       width: 100%;
-      height: 240px;
+      height: 260px;
       background-color: #080a0f;
       position: relative;
       overflow: hidden;
@@ -234,6 +233,85 @@
       transform: translateY(-1px);
     }
 
+    /* Single Items Showcase Grid */
+    .items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .item-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .item-card:hover {
+      transform: translateY(-4px);
+      border-color: #58a6ff;
+    }
+
+    .item-img-wrap {
+      width: 100%;
+      height: 280px;
+      background-color: #080a0f;
+    }
+
+    .item-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .item-info {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .item-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .item-collection-name {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .opensea-mini-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+      padding: 8px 12px;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-hover));
+      color: #ffffff;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.2s ease;
+    }
+
+    .opensea-mini-btn:hover {
+      background: linear-gradient(135deg, var(--accent-hover), #134e8a);
+    }
+
+    .opensea-mini-btn svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+
     footer {
       text-align: center;
       padding: 24px 20px;
@@ -248,7 +326,7 @@
   <header>
     <div class="badge">Ethereum Blockchain Verified</div>
     <h1>nakiera Art Portfolio</h1>
-    <p>Original charcoal, acrylic, and watercolor artworks minted as verified NFTs on Ethereum.</p>
+    <p>Original charcoal, acrylic, and watercolor physical artworks minted as verified NFTs on Ethereum.</p>
     <a href="https://opensea.io/nakiera" target="_blank" rel="noopener noreferrer" class="main-cta">
       View All Works on OpenSea &rarr;
     </a>
@@ -256,18 +334,15 @@
 
   <main class="container">
 
-    <div class="section-title">Collections</div>
+    <!-- Koleksiyonlar Bölümü -->
+    <div class="section-title">Verified Collections</div>
 
     <div class="collections-grid">
 
-      <!-- Kart 1: nakiera Collection (Ayçiçeği Tablosu) -->
+      <!-- Koleksiyon 1 -->
       <div class="collection-card">
         <div class="card-img-wrap">
-          <img 
-            src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=800&q=80" 
-            alt="Sunflower Art - nakiera Collection" 
-            loading="lazy" 
-          />
+          <img src="images/sunflower2.jpg" alt="Sunflower Painting" loading="lazy" />
         </div>
         <div class="card-body">
           <div>
@@ -286,14 +361,10 @@
         </div>
       </div>
 
-      <!-- Kart 2: black and white by zo (Karakalem Gül) -->
+      <!-- Koleksiyon 2 -->
       <div class="collection-card">
         <div class="card-img-wrap">
-          <img 
-            src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=800&q=80" 
-            alt="Black and White Rose Sketch" 
-            loading="lazy" 
-          />
+          <img src="images/rose2.jpg" alt="Charcoal Rose Sketch" loading="lazy" />
         </div>
         <div class="card-body">
           <div>
@@ -312,14 +383,10 @@
         </div>
       </div>
 
-      <!-- Kart 3: ZO paintings (Nostaljik Bisiklet / Gelincik) -->
+      <!-- Koleksiyon 3 -->
       <div class="collection-card">
         <div class="card-img-wrap">
-          <img 
-            src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80" 
-            alt="Traditional Paintings - Nostalgic Bicycle" 
-            loading="lazy" 
-          />
+          <img src="images/bycycle1.jpg" alt="Vintage Bicycle Painting" loading="lazy" />
         </div>
         <div class="card-body">
           <div>
@@ -327,7 +394,7 @@
               <h3>ZO paintings</h3>
               <span class="card-tag">Fine Art</span>
             </div>
-            <p>Signature traditional art pieces including scenic compositions, Mediterranean floral doors, nostalgic bicycle themes, and vivid poppies.</p>
+            <p>Signature traditional art pieces including scenic compositions, Mediterranean floral doors, and vivid poppies.</p>
           </div>
           <div class="collection-footer">
             <span class="item-count">Featured Works</span>
@@ -337,6 +404,115 @@
           </div>
         </div>
       </div>
+
+    </div>
+
+    <!-- Öne Çıkan Eserler Vitrini -->
+    <div class="section-title">Featured Artworks</div>
+
+    <div class="items-grid">
+
+      <!-- Item 1: Wine -->
+      <article class="item-card">
+        <div class="item-img-wrap">
+          <img src="images/wine1.jpg" alt="wine1" loading="lazy" />
+        </div>
+        <div class="item-info">
+          <div>
+            <div class="item-title">wine1</div>
+            <div class="item-collection-name">nakiera Collection</div>
+          </div>
+          <a href="https://opensea.io/nakiera" target="_blank" rel="noopener noreferrer" class="opensea-mini-btn">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+            Make Offer
+          </a>
+        </div>
+      </article>
+
+      <!-- Item 2: Tulip 1 -->
+      <article class="item-card">
+        <div class="item-img-wrap">
+          <img src="images/tulip1.jpg" alt="tulip1" loading="lazy" />
+        </div>
+        <div class="item-info">
+          <div>
+            <div class="item-title">tulip1</div>
+            <div class="item-collection-name">ZO paintings</div>
+          </div>
+          <a href="https://opensea.io/nakiera" target="_blank" rel="noopener noreferrer" class="opensea-mini-btn">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+            Make Offer
+          </a>
+        </div>
+      </article>
+
+      <!-- Item 3: Poppy 1 -->
+      <article class="item-card">
+        <div class="item-img-wrap">
+          <img src="images/poppy1.jpg" alt="poppy1" loading="lazy" />
+        </div>
+        <div class="item-info">
+          <div>
+            <div class="item-title">poppy1</div>
+            <div class="item-collection-name">ZO paintings</div>
+          </div>
+          <a href="https://opensea.io/nakiera" target="_blank" rel="noopener noreferrer" class="opensea-mini-btn">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+            Make Offer
+          </a>
+        </div>
+      </article>
+
+      <!-- Item 4: Bust 1 (Karakalem) -->
+      <article class="item-card">
+        <div class="item-img-wrap">
+          <img src="images/bust1.jpg" alt="bust1" loading="lazy" />
+        </div>
+        <div class="item-info">
+          <div>
+            <div class="item-title">bust1</div>
+            <div class="item-collection-name">black and white by zo</div>
+          </div>
+          <a href="https://opensea.io/nakiera" target="_blank" rel="noopener noreferrer" class="opensea-mini-btn">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+            Make Offer
+          </a>
+        </div>
+      </article>
+
+      <!-- Item 5: Lighthouse -->
+      <article class="item-card">
+        <div class="item-img-wrap">
+          <img src="images/lighthouse1.jpg" alt="lighthouse1" loading="lazy" />
+        </div>
+        <div class="item-info">
+          <div>
+            <div class="item-title">lighthouse1</div>
+            <div class="item-collection-name">black and white by zo</div>
+          </div>
+          <a href="https://opensea.io/nakiera" target="_blank" rel="noopener noreferrer" class="opensea-mini-btn">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+            Make Offer
+          </a>
+        </div>
+      </article>
+
+      <!-- Item 6: Daisies -->
+      <article class="item-card">
+        <div class="item-img-wrap">
+          <img src="images/daisies.jpg" alt="daisies" loading="lazy" />
+        </div>
+        <div class="item-info">
+          <div>
+            <div class="item-title">daisies</div>
+            <div class="item-collection-name">ZO paintings</div>
+          </div>
+          <a href="https://opensea.io/nakiera" target="_blank" rel="noopener noreferrer" class="opensea-mini-btn">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+            Make Offer
+          </a>
+        </div>
+      </article>
 
     </div>
 
