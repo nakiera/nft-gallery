@@ -3,28 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>nakiera Art Gallery & NFT Collection</title>
-  <meta name="description" content="Original paintings and charcoal drawings by nakiera." />
+  <title>nakiera Art Portfolio & NFT Collections</title>
+  <meta name="description" content="Original fine art collection by nakiera." />
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --bg-color: #0b0e14;
-      --card-bg: #151a22;
-      --border-color: #262c36;
+      --card-bg: #141922;
+      --border-color: #242c38;
       --text-main: #f0f6fc;
       --text-muted: #8b949e;
       --accent-blue: #2081e2;
       --accent-hover: #1868b7;
+      --card-hover: #1b222d;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
-      font-family: 'Inter', -apple-system, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-main);
       min-height: 100vh;
@@ -32,154 +38,200 @@
       flex-direction: column;
     }
 
+    /* Header */
     header {
-      padding: 50px 20px 30px;
+      padding: 60px 20px 40px;
       text-align: center;
       border-bottom: 1px solid var(--border-color);
-      background: radial-gradient(circle at top, #1a2230 0%, var(--bg-color) 70%);
+      background: radial-gradient(circle at top, #1e293b 0%, var(--bg-color) 75%);
     }
 
     .badge {
       display: inline-block;
-      padding: 4px 12px;
+      padding: 6px 16px;
       background: rgba(32, 129, 226, 0.15);
       color: #58a6ff;
       border: 1px solid rgba(88, 166, 255, 0.3);
       border-radius: 20px;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 600;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
+      letter-spacing: 0.3px;
     }
 
     header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
+      font-size: 2.7rem;
+      font-weight: 800;
       letter-spacing: -0.5px;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
 
     header p {
       color: var(--text-muted);
-      font-size: 1rem;
-      max-width: 600px;
-      margin: 0 auto 20px;
+      font-size: 1.05rem;
+      max-width: 620px;
+      margin: 0 auto 24px;
+      line-height: 1.6;
     }
 
-    .header-btn {
+    .main-cta {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       background: linear-gradient(135deg, var(--accent-blue), var(--accent-hover));
-      color: #fff;
-      padding: 10px 22px;
+      color: #ffffff;
+      padding: 12px 28px;
       border-radius: 8px;
       font-weight: 600;
       text-decoration: none;
-      font-size: 0.95rem;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .header-btn:hover {
+    .main-cta:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 14px rgba(32, 129, 226, 0.4);
+      box-shadow: 0 6px 20px rgba(32, 129, 226, 0.4);
     }
 
+    /* Container */
     .container {
-      max-width: 1280px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 48px 20px;
       flex: 1;
     }
 
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 24px;
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
-    .card {
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background-color: var(--border-color);
+    }
+
+    /* Collections Grid */
+    .collections-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 28px;
+      margin-bottom: 48px;
+    }
+
+    .collection-card {
       background-color: var(--card-bg);
       border: 1px solid var(--border-color);
-      border-radius: 12px;
+      border-radius: 16px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
+    .collection-card:hover {
+      transform: translateY(-6px);
       border-color: #58a6ff;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+      background-color: var(--card-hover);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
     }
 
-    .image-wrapper {
+    /* Görsel Çerçevesi */
+    .card-img-wrap {
       width: 100%;
-      height: 330px;
-      background-color: #0c0f14;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      height: 240px;
+      background-color: #080a0f;
+      position: relative;
       overflow: hidden;
     }
 
-    .card img {
+    .card-img-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.3s ease;
+      transition: transform 0.4s ease;
     }
 
-    .card:hover img {
-      transform: scale(1.04);
+    .collection-card:hover .card-img-wrap img {
+      transform: scale(1.05);
     }
 
-    .card-info {
-      padding: 18px;
+    .card-body {
+      padding: 24px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
       justify-content: space-between;
     }
 
-    .card-title {
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: var(--text-main);
-      margin-bottom: 4px;
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      gap: 8px;
     }
 
-    .card-collection {
+    .collection-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .card-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      background-color: #1e2530;
+      color: #79c0ff;
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      white-space: nowrap;
+    }
+
+    .collection-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+
+    .collection-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-color);
+      padding-top: 18px;
+    }
+
+    .item-count {
       font-size: 0.85rem;
       color: var(--text-muted);
-      margin-bottom: 16px;
+      font-weight: 600;
     }
 
-    .opensea-btn {
+    .card-btn {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
       gap: 8px;
-      width: 100%;
-      padding: 10px 14px;
-      background: linear-gradient(135deg, var(--accent-blue), var(--accent-hover));
+      padding: 8px 18px;
+      background-color: var(--accent-blue);
       color: #ffffff;
-      font-size: 0.9rem;
       font-weight: 600;
       text-decoration: none;
       border-radius: 8px;
-      transition: transform 0.2s, box-shadow 0.2s;
+      font-size: 0.88rem;
+      transition: background-color 0.2s ease, transform 0.2s ease;
     }
 
-    .opensea-btn:hover {
-      background: linear-gradient(135deg, var(--accent-hover), #134e8a);
-      box-shadow: 0 4px 12px rgba(32, 129, 226, 0.4);
-    }
-
-    .opensea-btn svg {
-      width: 16px;
-      height: 16px;
-      fill: currentColor;
+    .card-btn:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-1px);
     }
 
     footer {
@@ -194,120 +246,100 @@
 <body>
 
   <header>
-    <div class="badge">Verified Artist &bull; Ethereum</div>
-    <h1>nakiera Art Gallery</h1>
-    <p>Original traditional paintings, charcoal studies, and verified NFT artworks.</p>
-    <a href="https://opensea.io/nakiera" target="_blank" rel="noopener noreferrer" class="header-btn">
-      View OpenSea Profile &rarr;
+    <div class="badge">Ethereum Blockchain Verified</div>
+    <h1>nakiera Art Portfolio</h1>
+    <p>Original charcoal, acrylic, and watercolor artworks minted as verified NFTs on Ethereum.</p>
+    <a href="https://opensea.io/nakiera" target="_blank" rel="noopener noreferrer" class="main-cta">
+      View All Works on OpenSea &rarr;
     </a>
   </header>
 
   <main class="container">
-    <div class="gallery-grid">
 
-      <!-- 1. Sunflower -->
-      <article class="card">
-        <div class="image-wrapper">
-          <img src="https://i.ibb.co/3yC0Dvx/sunflower2zo.jpg" onerror="this.onerror=null; this.src='https://picsum.photos/400/500?random=1';" alt="sunflower2zo" loading="lazy" />
-        </div>
-        <div class="card-info">
-          <div>
-            <h2 class="card-title">sunflower2zo</h2>
-            <p class="card-collection">nakiera Collection</p>
-          </div>
-          <a href="https://opensea.io/nakiera" target="_blank" rel="noopener noreferrer" class="opensea-btn">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
-            Make Offer on OpenSea
-          </a>
-        </div>
-      </article>
+    <div class="section-title">Collections</div>
 
-      <!-- 2. Wine & Still Life -->
-      <article class="card">
-        <div class="image-wrapper">
-          <img src="https://i.ibb.co/6rW8pW4/wine1zo.jpg" onerror="this.onerror=null; this.src='https://picsum.photos/400/500?random=2';" alt="wine1zo" loading="lazy" />
-        </div>
-        <div class="card-info">
-          <div>
-            <h2 class="card-title">wine1zo</h2>
-            <p class="card-collection">nakiera Collection</p>
-          </div>
-          <a href="https://opensea.io/nakiera" target="_blank" rel="noopener noreferrer" class="opensea-btn">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
-            Make Offer on OpenSea
-          </a>
-        </div>
-      </article>
+    <div class="collections-grid">
 
-      <!-- 3. Charcoal Rose -->
-      <article class="card">
-        <div class="image-wrapper">
-          <img src="https://i.ibb.co/3sX8c5q/rose2zo.jpg" onerror="this.onerror=null; this.src='https://picsum.photos/400/500?random=3';" alt="rose2zo" loading="lazy" />
+      <!-- Kart 1: nakiera Collection (Ayçiçeği Tablosu) -->
+      <div class="collection-card">
+        <div class="card-img-wrap">
+          <img 
+            src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=800&q=80" 
+            alt="Sunflower Art - nakiera Collection" 
+            loading="lazy" 
+          />
         </div>
-        <div class="card-info">
+        <div class="card-body">
           <div>
-            <h2 class="card-title">rose2zo</h2>
-            <p class="card-collection">black and white by zo</p>
+            <div class="card-header">
+              <h3>nakiera Collection</h3>
+              <span class="card-tag">Acrylic & Watercolor</span>
+            </div>
+            <p>Vibrant floral and still-life series featuring Sunflowers, Iris flowers, Wine compositions, and Tulips.</p>
           </div>
-          <a href="https://opensea.io/nakiera" target="_blank" rel="noopener noreferrer" class="opensea-btn">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
-            Make Offer on OpenSea
-          </a>
+          <div class="collection-footer">
+            <span class="item-count">150+ Items</span>
+            <a href="https://opensea.io/collection/nakiera-collection" target="_blank" rel="noopener noreferrer" class="card-btn">
+              View Details &rarr;
+            </a>
+          </div>
         </div>
-      </article>
+      </div>
 
-      <!-- 4. Vintage Bicycle -->
-      <article class="card">
-        <div class="image-wrapper">
-          <img src="https://i.ibb.co/4T7V2kP/bycylezo.jpg" onerror="this.onerror=null; this.src='https://picsum.photos/400/500?random=4';" alt="bycylezo" loading="lazy" />
+      <!-- Kart 2: black and white by zo (Karakalem Gül) -->
+      <div class="collection-card">
+        <div class="card-img-wrap">
+          <img 
+            src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=800&q=80" 
+            alt="Black and White Rose Sketch" 
+            loading="lazy" 
+          />
         </div>
-        <div class="card-info">
+        <div class="card-body">
           <div>
-            <h2 class="card-title">bycylezo</h2>
-            <p class="card-collection">ZO paintings</p>
+            <div class="card-header">
+              <h3>black and white by zo</h3>
+              <span class="card-tag">Charcoal & Pencil</span>
+            </div>
+            <p>Hand-drawn fine pencil, graphite, and charcoal sketches focusing on detailed botanical roses, drapery, and classical studies.</p>
           </div>
-          <a href="https://opensea.io/nakiera" target="_blank" rel="noopener noreferrer" class="opensea-btn">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
-            Make Offer on OpenSea
-          </a>
+          <div class="collection-footer">
+            <span class="item-count">70 Items</span>
+            <a href="https://opensea.io/collection/black-and-white-by-zo" target="_blank" rel="noopener noreferrer" class="card-btn">
+              View Details &rarr;
+            </a>
+          </div>
         </div>
-      </article>
+      </div>
 
-      <!-- 5. Poppies -->
-      <article class="card">
-        <div class="image-wrapper">
-          <img src="https://i.ibb.co/p3pMvjF/poppies1zo.jpg" onerror="this.onerror=null; this.src='https://picsum.photos/400/500?random=5';" alt="poppies1zo" loading="lazy" />
+      <!-- Kart 3: ZO paintings (Nostaljik Bisiklet / Gelincik) -->
+      <div class="collection-card">
+        <div class="card-img-wrap">
+          <img 
+            src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80" 
+            alt="Traditional Paintings - Nostalgic Bicycle" 
+            loading="lazy" 
+          />
         </div>
-        <div class="card-info">
+        <div class="card-body">
           <div>
-            <h2 class="card-title">poppies1zo</h2>
-            <p class="card-collection">ZO paintings</p>
+            <div class="card-header">
+              <h3>ZO paintings</h3>
+              <span class="card-tag">Fine Art</span>
+            </div>
+            <p>Signature traditional art pieces including scenic compositions, Mediterranean floral doors, nostalgic bicycle themes, and vivid poppies.</p>
           </div>
-          <a href="https://opensea.io/nakiera" target="_blank" rel="noopener noreferrer" class="opensea-btn">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
-            Make Offer on OpenSea
-          </a>
-        </div>
-      </article>
-
-      <!-- 6. Tulips -->
-      <article class="card">
-        <div class="image-wrapper">
-          <img src="https://i.ibb.co/3WqP49b/tulip1zo.jpg" onerror="this.onerror=null; this.src='https://picsum.photos/400/500?random=6';" alt="tulip1zo" loading="lazy" />
-        </div>
-        <div class="card-info">
-          <div>
-            <h2 class="card-title">tulip1zo</h2>
-            <p class="card-collection">ZO paintings</p>
+          <div class="collection-footer">
+            <span class="item-count">Featured Works</span>
+            <a href="https://opensea.io/collection/zo-paintings" target="_blank" rel="noopener noreferrer" class="card-btn">
+              View Details &rarr;
+            </a>
           </div>
-          <a href="https://opensea.io/nakiera" target="_blank" rel="noopener noreferrer" class="opensea-btn">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
-            Make Offer on OpenSea
-          </a>
         </div>
-      </article>
+      </div>
 
     </div>
+
   </main>
 
   <footer>
